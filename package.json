@@ -1,6 +1,6 @@
 {
   "name": "@pubcore/generator-storybook-mui",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "generates storybook with material-ui",
   "files": [
     "app"
