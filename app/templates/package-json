@@ -1,0 +1,15 @@
+{
+  "name": "<%= name %>",
+  "version": "0.0.1",
+  "description": "<%= description %>",
+  "scripts": {
+    "start": "node start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "<%= repository %>"
+  },
+  "keywords": [],
+  "author": "<%= author %>",
+  "license": "<%= license %>"
+}

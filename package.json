@@ -1,0 +1,32 @@
+{
+  "name": "@pubcore/generator-storybook-mui",
+  "version": "1.0.0",
+  "description": "generates storybook with material-ui",
+  "files": [
+    "app"
+  ],
+  "scripts": {
+    "test": "mocha --recursive"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:pubcore/generator-storybook-mui.git"
+  },
+  "keywords": [
+    "yeoman-generator"
+  ],
+  "author": "pubcore",
+  "license": "MIT",
+  "engines": {
+    "node": ">=10.15.0"
+  },
+  "devDependencies": {
+    "eslint": "^7.6.0",
+    "eslint-plugin-react": "^7.20.5",
+    "mocha": "^8.1.1",
+    "yeoman-test": "^3.0.0"
+  },
+  "dependencies": {
+    "yeoman-generator": "^4.11.0"
+  }
+}
