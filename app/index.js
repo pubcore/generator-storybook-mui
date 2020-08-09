@@ -42,6 +42,7 @@ module.exports = class extends Generator {
 		var replacements = {...this.answers, ...this.initial}
 
 		this.fs.copy(this.templatePath('static/**/*'), this.destinationPath('.'), {globOptions:{dot:true}} )
+		this.fs.copyTpl(this.templatePath('_gitignore'), this.destinationPath('./.gitignore'))
 		this.fs.copyTpl(this.templatePath('package-json'), this.destinationPath('./package.json'), replacements)
 		this.fs.copyTpl(this.templatePath('README.md'), this.destinationPath('./README.md'), replacements)
 	}
