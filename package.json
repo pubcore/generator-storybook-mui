@@ -18,15 +18,27 @@
   "author": "pubcore",
   "license": "MIT",
   "engines": {
-    "node": ">=10.15.0"
+    "node": ">=14.15"
   },
   "devDependencies": {
     "eslint": "^7.20.0",
+    "eslint-config-prettier": "^7.2.0",
     "eslint-plugin-react": "^7.22.0",
+    "husky": "^5.0.9",
     "mocha": "^8.3.0",
+    "prettier": "^2.2.1",
     "yeoman-test": "^3.0.0"
   },
   "dependencies": {
     "yeoman-generator": "^4.13.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "**/*": "prettier --write --ignore-unknown",
+    "**/*.?js": "eslint . --fix"
   }
 }

@@ -1,6 +1,6 @@
 {
   "name": "<%= name %>",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "<%= description %>",
   "scripts": {
     "start": "node start"
@@ -11,5 +11,14 @@
   },
   "keywords": [],
   "author": "<%= author %>",
-  "license": "<%= license %>"
+  "license": "<%= license %>",
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "**/*": "prettier --write --ignore-unknown",
+    "**/*.?js": "eslint . --fix"
+  }
 }

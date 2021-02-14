@@ -1,12 +1,10 @@
-import {addDecorator} from '@storybook/react';
-import React from "react";
+import { addDecorator } from '@storybook/react'
+import React from 'react'
 
-import { StylesProvider } from "@material-ui/styles";
+import { StylesProvider } from '@material-ui/styles'
 
-const StylesDecorator = storyFn => (
-  <StylesProvider injectFirst>
-    {storyFn()}
-  </StylesProvider>
-);
+const StylesDecorator = (storyFn) => (
+  <StylesProvider injectFirst>{storyFn()}</StylesProvider>
+)
 
-addDecorator(StylesDecorator);
+addDecorator(StylesDecorator)
