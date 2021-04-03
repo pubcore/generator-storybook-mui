@@ -20,5 +20,14 @@
   "lint-staged": {
     "**/*": "prettier --write --ignore-unknown",
     "**/*.?js": "eslint . --fix"
+  },
+  "peerDependencies": {
+    "@material-ui/core": "^4.11",
+    "@material-ui/icons": "^4.9",
+    "i18next": "^19.7",
+    "react": "16 - x",
+    "react-dom": "16 - x",
+    "react-i18next": "^11.7",
+    "styled-components": "^5.1"
   }
 }

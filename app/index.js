@@ -9,9 +9,7 @@ module.exports = class extends Generator {
   initializing() {
     var localName = this.appname.replace(/\s+/g, '-')
     if (readdirSync(this.destinationRoot()).length) {
-      this.log.error(
-        'working directory is not empty, beware hidden files (dot-files)'
-      )
+      this.log.error('working directory is not empty (beware dot-files)')
       process.exit(1)
     }
     this.initial = {
@@ -77,16 +75,15 @@ module.exports = class extends Generator {
   }
   install() {
     this.log('Install packages ...')
-    const dependencies =
-      'react react-dom @material-ui/core @material-ui/styles styled-components dotenv'
-    const devDependencies =
-      '@storybook/react @storybook/addon-actions husky prettier eslint-config-prettier eslint eslint-plugin-react'
-    this.spawnCommandSync('npm', [
-      'i',
-      '--save-dev',
-      ...devDependencies.split(' '),
-    ])
-    this.spawnCommandSync('npm', ['i', ...dependencies.split(' ')])
+    //BEWARE peer dependencies in static package-json, do not install it here!
+    const deps = '@material-ui/styles @material-ui/lab prop-types'
+    const devDeps =
+      '@babel/cli @babel/core @babel/preset-env @babel/preset-react \
+babel-loader @storybook/react @storybook/addon-actions husky prettier \
+eslint-config-prettier eslint eslint-plugin-react cross-env dotenv rimraf \
+react-i18next'
+    this.spawnCommandSync('npm', ['i', '-D', ...devDeps.split(' ')])
+    this.spawnCommandSync('npm', ['i', ...deps.split(' ')])
     this.spawnCommandSync('git', ['init'])
     this.spawnCommandSync('npx', ['husky', 'install'])
   }
