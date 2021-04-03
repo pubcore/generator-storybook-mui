@@ -14,4 +14,6 @@ const sslConfig =
         SSL_KEY,
       ]
     : []
-spawn('npx', ['start-storybook', ...sslConfig], { stdio: 'inherit' })
+spawn('npx', ['start-storybook', ...sslConfig, '-s', './public'], {
+  stdio: 'inherit',
+})

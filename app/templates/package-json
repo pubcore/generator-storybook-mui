@@ -3,7 +3,10 @@
   "version": "0.1.0",
   "description": "<%= description %>",
   "scripts": {
-    "start": "node start"
+    "start": "node -r dotenv/config server",
+    "build": "rimraf js && cross-env BABEL_ENV=production babel src -d js",
+    "watch": "cross-env BABEL_ENV=production babel --watch src -d js | sed \"s/^/storybook: /\" &",
+    "prepare": "npm run build"
   },
   "repository": {
     "type": "git",
