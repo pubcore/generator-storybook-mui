@@ -31,7 +31,7 @@ npx -p @pubcore/generator-storybook-mui -p yo yo @pubcore/storybook-mui
 5. start storybook, If TLS is required (https), enable it in .env file
 
 ```
-npm run start
+npm start
 ```
 
 #### References
