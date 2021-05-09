@@ -5,7 +5,7 @@ react components which, once exported in index.js, can be directly imported in
 some react app. Corresponding app(s), which depends on this package, should be
 part of a npm workspaces setup.
 
-If apps are build with Unidirectional Data Flow paradigm, this can help to segragate
+If apps are build with Unidirectional Data Flow paradigm, this can help to segregate
 usage of local state (e.g. by react useState hook): It will not (or rarely)
 occure within app's code.
 
