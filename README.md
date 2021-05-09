@@ -1,5 +1,22 @@
 ## generates storybook with material-ui and styled components
 
+The generated storybook can be used to develop, test, review and find
+react components which, once exported in index.js, can be directly imported in
+some react app. Corresponding app(s), which depends on this package, should be
+part of a npm workspaces setup.
+
+If apps are build with Unidirectional Data Flow paradigm, this can help to segragate
+usage of local state (e.g. by react useState hook): It will not (or rarely)
+occure within app's code.
+
+Also styling efforts will not (or rarely) occure in app's code.
+
+The code of app's views is more focused on behaviour.
+
+#### localization
+
+i18next and [react-i18next](https://react.i18next.com) is used for localization
+
 #### prerequisite
 
 - git
@@ -9,7 +26,7 @@
 
 1. Change into you scope directory, where your packages (of corrsesponding scope) are.
 2. Create a directory with name of your package. Convention is lower case and
-   dash-separated, here we assume we want to generate "your-package-name":
+   hyphen-separated, for instance "your-package-name":
 
 ```
 mkdir your-package-name
@@ -40,3 +57,4 @@ npm start
 - [storybook decorator, preview.js](https://storybook.js.org/docs/addons/introduction/)
 - https://material-ui.com/guides/interoperability/
   https://yeoman.io
+- [uniderectional data flow](<https://en.wikipedia.org/wiki/Unidirectional_Data_Flow_(computer_science)>)
