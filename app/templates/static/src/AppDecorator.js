@@ -15,6 +15,7 @@ export const AppDecorator = ({
       translation: { name: "This is a long name text." },
     },
   },
+  useDarkMode = () => null,
 }) => {
   i18n.use(initReactI18next).init({
     ...{
@@ -38,7 +39,9 @@ export const AppDecorator = ({
   });
 
   return function decorator(Application) {
-    var darkMode = useMediaQuery("(prefers-color-scheme: dark)"),
+    var darkModeBySwitch = useDarkMode(),
+      darkModeByMediaQuery = useMediaQuery("(prefers-color-scheme: dark)"),
+      darkMode = darkModeBySwitch ?? darkModeByMediaQuery,
       theme = React.useMemo(() => createTheme({ darkMode }), [darkMode]);
 
     return (

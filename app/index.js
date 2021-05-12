@@ -80,9 +80,9 @@ module.exports = class extends Generator {
     const devDeps =
       "@babel/cli @babel/core @babel/preset-env @babel/preset-react \
 babel-loader @storybook/addon-actions @storybook/addon-essentials \
-@storybook/addon-links @storybook/node-logger @storybook/react husky prettier \
-eslint-config-prettier eslint eslint-plugin-react cross-env dotenv rimraf \
-react-i18next";
+@storybook/addon-links @storybook/node-logger @storybook/react \
+storybook-dark-mode husky prettier eslint-config-prettier eslint \
+eslint-plugin-react cross-env dotenv rimraf react-i18next";
     this.spawnCommandSync("npm", ["i", "-D", ...devDeps.split(" ")]);
     this.spawnCommandSync("npm", ["i", ...deps.split(" ")]);
     this.spawnCommandSync("npx", ["prettier", "--write", "."]);
