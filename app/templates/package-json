@@ -5,8 +5,8 @@
   "main": "js/index.js",
   "scripts": {
     "start": "node -r dotenv/config server",
-    "build": "rimraf js && cross-env BABEL_ENV=production babel src -d js",
-    "watch": "cross-env BABEL_ENV=production babel --watch src -d js | sed \"s/^/storybook: /\" &",
+    "build": "rimraf js && cross-env BABEL_ENV=production babel --copy-files src -d js",
+    "watch": "cross-env BABEL_ENV=production babel --watch --copy-files src -d js | sed \"s/^/storybook: /\" &",
     "prepare": "npm run build"
   },
   "repository": {
